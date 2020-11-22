@@ -1,0 +1,22 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mediacenter.js",
+  "scripts": {
+    "start": "nodemon mediacenter.js",
+    "test": "jsdoc mediacenter.js app.js Controllers/*.js Models/*.js Routes/*.js "
+  },
+  "keywords": [],
+  "author": "Fernando Orozco",
+  "license": "ISC",
+  "dependencies": {
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.6",
+    "nodemon": "^2.0.6"
+  }
+}
