@@ -9,9 +9,12 @@ const audiosupload = multipart({uploadDir: './uploads/audios'});
 const imagesupload = multipart({uploadDir: './uploads/images'});
 
 router.get('/', (req, res)=>{
-    res.json({getMethods: [
-    	'getvideos', 'getimages', 'getaudios', 'getfile/:filename'
-    	]});
+    res.json({
+    	getMethods: ['getvideos', 'getimages', 'getaudios', 'getfile/:namestore'],
+    	postMethods: ['uploadvideo', 'uploadimage', 'uploadaudio'],
+    	putMethods: ['updatevideo/object_id', 'updateimage/object_id', 'updateaudio/object_id'] ,
+    	deleteMethods: ['deleltevideo/object_id', 'delelteimage/object_id', 'delelteaudio/object_id'] ,
+    });
 })
 
 

@@ -132,9 +132,10 @@ class Controller{
                 res.status(500).json({status: 500, message: 'Something went wrong'})
             }else if(!video){
                 res.status(404).json({status: 404, message: 'The file does not exists'})
+            }else{
+                res.json(video);
             }
 
-            res.json(video);
         })
     }
 
@@ -232,9 +233,11 @@ class Controller{
                 res.status(500).json({status: 500, message: 'Something went wrong'})
             }else if(!image){
                 res.status(404).json({status: 404, message: 'The file does not exists'})
+            }else{
+                res.json(image);
+
             }
 
-            res.json(image);
         })
     }
 
@@ -270,9 +273,9 @@ class Controller{
         var AudioData = req.files.Audio;
 
 
-        newAudio.name = MusicData.name;
-        newAudio.size = (MusicData.size / 1024 / 1024).toFixed(2) + ' MB';
-        newAudio.type = MusicData.name.split('.')[1];
+        newAudio.name = AudioData.name;
+        newAudio.size = (AudioData.size / 1024 / 1024).toFixed(2) + ' MB';
+        newAudio.type = AudioData.name.split('.')[1];
         newAudio.namestored = path.split('/')[2];
         
         if (audioFormats.some(af => newAudio.type === af)){
@@ -331,9 +334,10 @@ class Controller{
                 res.status(500).json({status: 500, message: 'Something went wrong'})
             }else if(!audio){
                 res.status(404).json({status: 404, message: 'The file does not exists'})
+            }else{
+                res.json(audio);
             }
 
-            res.json(audio);
         })
     }
 
